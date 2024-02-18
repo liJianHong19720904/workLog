@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>log of works</title>
+  <style type="text/css">
+	h2{font-size:20px;}
+	p{font-size:16px;}
+  </style>
+ </head>
+ <body>
+  <script type="text/javascript">
+  <!--
+	let myYear = {
+		            year : 2023, 
+	                months : [9, 10,11,12] ,
+					dates :  [30,31,30,31] 
+					} ;
+	const learning = ['备课学习《The Linux Command Line》','学习《Git for Teams》，为新增课程备课','学习《Eloquent JavaScript 3rd edition》，修炼编程能力','政治学习，江西干部网络学院（含中网院）APP'] ,
+	      studing = ['研究“Learning the bash Shell”有关技术','获取“WEB3”有关资讯和参考资料','从艺术工作者的角度理解元宇宙，研读“The Metaverse Handbook”，','检索和收集“区块链”技术的有关咨询，了解数字人民币的发展','了解国家经济和金融现状和问题（通过自媒体）','研读Richard M. Felder和Rebecca Brent所著的“teaching and learning STEM--a practical guide”','与老师学习STEM教育理念，探讨课程改革和学生专业发展'] ,
+		  teaching = ['制作《The Linux Command Line》教学音频','制作《Learn CSS In One Day》教学音频','设计编写《计算机科学导论》教学网站代码','维护《Web 程序设计基础》网站','维护《Web 程序设计（深入版）》网站'] ,
+		  working = ['学校文件、通知查阅' , '查看CS2021学生作业网站，分析学生学习效果' , '查阅了解其他高校网站的学科和专业设置' ,'学习教育部的本科审核评估的内涵' ,'学习了解教育部的工程教育认证的情况','学校有关的文件、通知查阅' ,'查找资料，编写计算机科学支撑其他专业数字化技能的程序设计程的教学大纲'] ,
+		  extraWorking = ['与老师在线沟通，讨论数据科学的研究内容','讨论课程教学改革与老师，在线沟通','与学生在线沟通，讨论当前课程课堂教学的不足和改进','与学生在线沟通，讨论学生自身发展、如何保持心理健康等话题','与学生在线沟通，讨论学生的毕业设计和论文构思'] ;
+	
+  for(let mn = 0 ; mn < myYear.months.length ; mn++) {    
+    for(let i = 1 ; i <= myYear.dates[mn] ;i++){
+	 let today =  new Date(myYear.year +'/'+ myYear.months[mn] +'/'+ i );
+	 //console.log(today);
+	
+    if (today.getDay()==6 ){
+		 console.log("--------周六略-By.李健宏--" );
+		 continue ;
+	 } 
+	if (today.getDay()==0){
+		 console.log("--------周日略-By.李健宏--" );
+		 continue ;
+	 } 
+     
+	 showToday(today);  
+	   		 
+	}//end 一个月的每天循环
+  } //end 一年的每月循环
+
+   function showToday(today){
+	     let titleDom = document.createElement("h2");
+		     titleDom.textContent = today.getFullYear() + "年" + (today.getMonth()+1) + "月" + today.getDate() +"日" + "（星期" + today.getDay()+ "）-By.李健宏.工作日志" ;
+            document.body.appendChild(titleDom);
+		 let ps = ["09:00", "10:00", "11:00", "14:00", "16:00"] ; 
+		 {
+           ps[0] += learning[Math.floor(Math.random()*learning.length)] ;
+		   ps[1] += studing[Math.floor(Math.random()*studing.length)]  ;
+           ps[2] += working[Math.floor(Math.random()*working.length)]  ;
+		   ps[3] += teaching[Math.floor(Math.random()*teaching.length)]  ;
+           ps[4] += extraWorking[Math.floor(Math.random()*extraWorking.length)]  ;
+		 }
+      if (today.getDay()==2 || today.getDay()==3){
+		 ps[0] = "08:35--11:30 上午全程课堂教学" ;
+		 ps[1] = "" ;
+         ps[2] = "" ;
+	   } 
+	     for (let p of ps ){
+           let pDom = document.createElement("p");
+           pDom.textContent = p ;
+		   document.body.appendChild(pDom);
+	     }
+
+   }//end of showToday
+  //-->
+  </script>
+
+ </body>
+</html>
